@@ -1,5 +1,5 @@
-// Set the API endpoint URL (replace with your backend endpoint if different)
-const apiUrl = 'http://localhost:8080/api';  // Replace with actual backend URL if needed
+// API endpoint (adjust if needed)
+const apiUrl = 'http://13.60.82.187:8080/api';  // Replace <your-ec2-public-ip> with the instance's public IP
 
 // Form submission event handler
 document.getElementById('clientForm').addEventListener('submit', async (e) => {
@@ -10,18 +10,15 @@ document.getElementById('clientForm').addEventListener('submit', async (e) => {
   const service = document.getElementById('service').value;
 
   try {
-    // Send data to the backend
     const response = await fetch(`${apiUrl}/submit`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, service })
     });
-    
+
     if (response.ok) {
-      // Clear the form
       document.getElementById('clientForm').reset();
-      // Refresh client data
-      fetchClientData();
+      fetchClientData(); // Refresh data display after submission
     } else {
       console.error('Failed to submit data');
     }
@@ -30,16 +27,15 @@ document.getElementById('clientForm').addEventListener('submit', async (e) => {
   }
 });
 
-// Function to fetch and display client data in real-time
+// Function to fetch and display client data
 async function fetchClientData() {
   try {
     const response = await fetch(`${apiUrl}/fetch`);
     if (response.ok) {
       const data = await response.json();
       const clientDataDiv = document.getElementById('clientData');
-      clientDataDiv.innerHTML = '';  // Clear current data
+      clientDataDiv.innerHTML = '';  // Clear current display
 
-      // Display each client entry
       data.forEach((client) => {
         const clientDiv = document.createElement('div');
         clientDiv.classList.add('client-item');
