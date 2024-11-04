@@ -6,7 +6,7 @@ WORKDIR /usr/share/nginx/html
 
 # Copy frontend files into the Nginx HTML directory
 COPY index.html .
-COPY styles.css .
+COPY style.css .
 COPY app.js .
 
 # Expose port 80 to serve the frontend
