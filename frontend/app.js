@@ -1,5 +1,5 @@
-// API endpoint (adjust if needed)
-const apiUrl = 'http://13.49.67.114:8080/api';  // Replace <your-ec2-public-ip> with the instance's public IP
+// API endpoint URL - replace with your actual backend API URL if necessary
+const apiUrl = 'http://13.49.67.114/:8080/api';  // Update with EC2 public IP if needed
 
 // Form submission event handler
 document.getElementById('clientForm').addEventListener('submit', async (e) => {
@@ -27,14 +27,14 @@ document.getElementById('clientForm').addEventListener('submit', async (e) => {
   }
 });
 
-// Function to fetch and display client data
+// Function to fetch and display client data in real-time
 async function fetchClientData() {
   try {
     const response = await fetch(`${apiUrl}/fetch`);
     if (response.ok) {
       const data = await response.json();
       const clientDataDiv = document.getElementById('clientData');
-      clientDataDiv.innerHTML = '';  // Clear current display
+      clientDataDiv.innerHTML = '';  // Clear current data
 
       data.forEach((client) => {
         const clientDiv = document.createElement('div');

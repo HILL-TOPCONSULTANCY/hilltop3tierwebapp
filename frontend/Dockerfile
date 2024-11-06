@@ -4,10 +4,8 @@ FROM nginx:latest
 # Set working directory
 WORKDIR /usr/share/nginx/html
 
-# Copy frontend files into the Nginx HTML directory
-COPY index.html .
-COPY style.css .
-COPY app.js .
+# Copy all HTML, CSS, and JavaScript files into the Nginx HTML directory
+COPY . .
 
 # Expose port 80 to serve the frontend
 EXPOSE 80
