@@ -1,5 +1,5 @@
 // API endpoint (adjust if needed)
-const apiUrl = 'http://13.60.82.187:8080/api';  // Replace <your-ec2-public-ip> with the instance's public IP
+const apiUrl = 'http://13.49.67.114:8080/api';  // Replace <your-ec2-public-ip> with the instance's public IP
 
 // Form submission event handler
 document.getElementById('clientForm').addEventListener('submit', async (e) => {
