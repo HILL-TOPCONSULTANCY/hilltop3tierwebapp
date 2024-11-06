@@ -21,11 +21,11 @@ body {
   align-items: center;
 }
 
-.navbar-left a {
-  color: white;
+.navbar-left h1, .navbar-left a {
   font-size: 1.5em;
-  font-weight: bold;
+  color: white;
   text-decoration: none;
+  margin: 0;
 }
 
 .navbar-right ul {
@@ -59,8 +59,6 @@ body {
   display: none;
   min-width: 200px;
   z-index: 1;
-  top: 100%;
-  left: 0;
 }
 
 .navbar-right ul li:hover .dropdown {
@@ -77,17 +75,6 @@ body {
 .dropdown li a:hover {
   background-color: #f0f0f0;
   color: #005f73;
-}
-
-/* Search Icon */
-.search-icon {
-  position: relative;
-}
-
-.search-icon input {
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
 }
 
 /* Header */
@@ -117,13 +104,13 @@ section {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.service-details ul {
-  list-style: disc;
-  padding-left: 20px;
+.about, .service-details {
+  text-align: center;
 }
 
-.service-details ul li {
-  margin: 10px 0;
+.service-details ul {
+  text-align: left;
+  list-style: disc inside;
 }
 
 /* Form Styling */
@@ -223,10 +210,4 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
   }
-}
-
-/* Remove Scrollbars */
-body, html {
-  overflow-x: hidden;
-  overflow-y: auto;
 }
