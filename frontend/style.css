@@ -1,4 +1,4 @@
-/* Reset */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -8,33 +8,23 @@
 body {
   font-family: Arial, sans-serif;
   color: #333;
-  background-color: #f9fafc;
-  overflow-x: hidden; /* Prevents horizontal scrolling */
-}
-
-/* Color Scheme */
-:root {
-  --primary-color: #005f73;
-  --secondary-color: #0a9396;
-  --accent-color: #94d2bd;
-  --text-color: #333;
-  --light-text: #ffffff;
-  --background-color: #f4f4f9;
+  background-color: #f4f4f9;
 }
 
 /* Navigation Bar */
 .navbar {
-  background-color: var(--primary-color);
-  color: var(--light-text);
-  padding: 15px 20px;
+  background-color: #005f73;
+  color: white;
+  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar-left h1 {
-  font-size: 1.8em;
-  color: var(--light-text);
+.navbar-left a {
+  font-size: 1.5em;
+  color: white;
+  text-decoration: none;
   font-weight: bold;
 }
 
@@ -50,24 +40,22 @@ body {
 }
 
 .navbar-right ul li a {
-  color: var(--light-text);
+  color: white;
   text-decoration: none;
   padding: 10px;
   font-weight: bold;
-  transition: color 0.3s;
 }
 
 .navbar-right ul li a:hover {
-  color: var(--accent-color);
+  color: #ffa726;
 }
 
 /* Dropdown Menu */
 .dropdown {
   position: absolute;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  border-radius: 5px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  color: #333;
+  border: 1px solid #ddd;
   display: none;
   min-width: 200px;
   z-index: 1;
@@ -78,46 +66,33 @@ body {
 }
 
 .dropdown li a {
-  color: var(--text-color);
+  color: #333;
   padding: 10px;
   display: block;
   text-decoration: none;
-  transition: background-color 0.3s;
 }
 
 .dropdown li a:hover {
-  background-color: var(--accent-color);
-  color: var(--light-text);
+  background-color: #f0f0f0;
+  color: #005f73;
 }
 
-/* Search Icon */
-.search-icon input {
-  padding: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  outline: none;
-  transition: border 0.3s ease;
-}
-
-.search-icon input:focus {
-  border-color: var(--secondary-color);
-}
-
-/* Header */
+/* Header Styling */
 header {
-  background-color: var(--primary-color);
-  color: var(--light-text);
-  padding: 20px;
+  background-color: #005f73;
+  color: white;
+  padding: 30px;
   text-align: center;
 }
 
 header h1 {
-  font-size: 2.2em;
-  margin-bottom: 5px;
+  font-size: 2em;
+  margin-bottom: 10px;
 }
 
 header p {
   margin: 5px 0;
+  font-size: 1.1em;
 }
 
 /* Section Styling */
@@ -125,11 +100,12 @@ section {
   padding: 20px;
   margin: 20px auto;
   max-width: 800px;
-  background-color: var(--background-color);
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* About Section */
 .about {
   text-align: center;
 }
@@ -147,23 +123,17 @@ section {
   margin-top: 5px;
   border: 1px solid #ddd;
   border-radius: 4px;
-  transition: border-color 0.3s ease;
-}
-
-.form-section input:focus {
-  border-color: var(--secondary-color);
 }
 
 .form-section button {
-  background-color: var(--primary-color);
-  color: var(--light-text);
+  background-color: #005f73;
+  color: white;
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
 .form-section button:hover {
-  background-color: var(--secondary-color);
+  background-color: #0a9396;
 }
 
 /* Client Data Display */
@@ -176,18 +146,17 @@ section {
   padding: 10px 0;
 }
 
-/* Footer */
+/* Footer Styling */
 footer {
-  background-color: var(--primary-color);
-  color: var(--light-text);
-  padding: 20px;
+  background-color: #005f73;
+  color: white;
+  padding: 20px 0;
   text-align: center;
   font-size: 0.9em;
-  margin-top: 20px;
 }
 
 footer a {
-  color: var(--accent-color);
+  color: #ffa726;
   text-decoration: none;
 }
 
@@ -219,16 +188,15 @@ footer a:hover {
 }
 
 .footer-bottom .footer-links ul li a {
-  color: var(--light-text);
+  color: white;
   text-decoration: none;
-  transition: color 0.3s;
 }
 
 .footer-bottom .footer-links ul li a:hover {
-  color: var(--accent-color);
+  color: #ffa726;
 }
 
-/* Responsive Design */
+/* Responsive Styling */
 @media (max-width: 768px) {
   .navbar-right ul {
     flex-direction: column;
@@ -239,4 +207,9 @@ footer a:hover {
     flex-direction: column;
     align-items: center;
   }
+}
+
+/* Remove Scrollbars */
+html, body {
+  overflow-x: hidden;
 }
