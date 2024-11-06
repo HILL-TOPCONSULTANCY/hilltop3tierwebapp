@@ -1,83 +1,13 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General styling */
 body {
   font-family: Arial, sans-serif;
   color: #333;
+  margin: 0;
+  padding: 0;
   background-color: #f4f4f9;
 }
 
-/* Navigation Bar */
-.navbar {
-  background-color: #005f73;
-  color: white;
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-left h1, .navbar-left a {
-  font-size: 1.5em;
-  color: white;
-  text-decoration: none;
-  margin: 0;
-}
-
-.navbar-right ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.navbar-right ul li {
-  position: relative;
-}
-
-.navbar-right ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  font-weight: bold;
-}
-
-.navbar-right ul li a:hover {
-  color: #ffa726;
-}
-
-/* Dropdown Menu */
-.dropdown {
-  position: absolute;
-  background-color: #ffffff;
-  color: #333;
-  border: 1px solid #ddd;
-  display: none;
-  min-width: 200px;
-  z-index: 1;
-}
-
-.navbar-right ul li:hover .dropdown {
-  display: block;
-}
-
-.dropdown li a {
-  color: #333;
-  padding: 10px;
-  display: block;
-  text-decoration: none;
-}
-
-.dropdown li a:hover {
-  background-color: #f0f0f0;
-  color: #005f73;
-}
-
-/* Header */
+/* Header styling */
 header {
   background-color: #005f73;
   color: white;
@@ -94,26 +24,21 @@ header p {
   margin: 5px 0;
 }
 
-/* Section Styling */
+/* Section styling */
 section {
   padding: 20px;
   margin: 20px auto;
-  max-width: 800px;
+  max-width: 600px;
   background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.about, .service-details {
+.about {
   text-align: center;
 }
 
-.service-details ul {
-  text-align: left;
-  list-style: disc inside;
-}
-
-/* Form Styling */
+/* Form styling */
 .form-section label {
   display: block;
   margin-top: 10px;
@@ -139,7 +64,7 @@ section {
   background-color: #0a9396;
 }
 
-/* Client Data Display */
+/* Submitted client information */
 .display-section #clientData {
   margin-top: 20px;
 }
@@ -149,65 +74,21 @@ section {
   padding: 10px 0;
 }
 
-/* Footer */
+/* Footer styling */
 footer {
+  text-align: center;
+  padding: 10px;
   background-color: #005f73;
   color: white;
-  padding: 20px 0;
-  text-align: center;
-  font-size: 0.9em;
+  position: relative;
+  bottom: 0;
+  width: 100%;
 }
 
 footer a {
   color: #ffa726;
   text-decoration: none;
 }
-
 footer a:hover {
   text-decoration: underline;
-}
-
-.footer-top p {
-  margin: 5px 0;
-}
-
-.footer-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.footer-bottom .newsletter {
-  margin-bottom: 10px;
-}
-
-.footer-bottom .footer-links ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.footer-bottom .footer-links ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-.footer-bottom .footer-links ul li a:hover {
-  color: #ffa726;
-}
-
-/* Responsive Styling */
-@media (max-width: 768px) {
-  .navbar-right ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer-bottom .footer-links ul {
-    flex-direction: column;
-    align-items: center;
-  }
 }
