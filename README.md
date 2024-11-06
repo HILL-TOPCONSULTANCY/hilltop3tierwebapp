@@ -122,3 +122,10 @@ To manage and deploy the application components, we will use specific Kubernetes
 - This project design provides a comprehensive solution for deploying a **Node.js-based full-stack application** on AWS using **Terraform** for infrastructure, **Helm** for Kubernetes resource management, and **ArgoCD** for continuous deployment.
 - The architecture ensures that different components of the application (FE, BE, and DB) are isolated in secure subnets and managed efficiently on EKS.
 - Key AWS services such as **Secrets Manager**, **IAM**, and **CloudWatch** enhance security and monitoring, ensuring a scalable and secure application environment deployment into distinct tiers (frontend, backend, database) and using Terraform for infrastructure provisioning and Helm for application deployment, the solution provides scalability, security, and ease of management.
+---
+```sh
+docker run -d --name mongodb -p 27017:27017 -v mongo-data:/data/db mongo
+docker run -d --name backend -p 8080:8080 --env MONGO_URL="mongodb://mongodb:27017/mydatabase" --link mongodb backend-app
+docker run -d --name frontend -p 80:80 --env BACKEND_URL="http://backend:8080" --link backend frontend-app
+```
+
