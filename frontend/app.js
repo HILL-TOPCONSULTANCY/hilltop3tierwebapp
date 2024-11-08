@@ -1,5 +1,5 @@
 // API endpoint URL - replace with your actual backend API URL if necessary
-const apiUrl = 'http://13.60.229.82/:8080/api';  // Update with EC2 public IP if needed
+const apiUrl = 'http://13.60.229.82:8080/api';  // Update with EC2 public IP if needed
 
 // Form submission event handler
 document.getElementById('clientForm').addEventListener('submit', async (e) => {
