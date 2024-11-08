@@ -1,16 +1,17 @@
-// Set the API endpoint URL (replace with your backend endpoint if different)
-const apiUrl = 'http://13.60.229.82:8080/api';  // Using provided IP
+// Set API endpoint URL
+const apiUrl = process.env.BACKEND_URL || 'http://localhost:8080/api';
 
-// Form submission event handler
+// Function to handle form submission
 document.getElementById('clientForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
+  // Get form data
   const name = document.getElementById('name').value;
   const email = document.getElementById('email').value;
   const service = document.getElementById('service').value;
 
+  // Submit data to the backend
   try {
-    // Send data to the backend
     const response = await fetch(`${apiUrl}/submit`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -18,10 +19,8 @@ document.getElementById('clientForm').addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
-      // Clear the form
       document.getElementById('clientForm').reset();
-      // Refresh client data
-      fetchClientData();
+      fetchClientData(); // Refresh data display
     } else {
       console.error('Failed to submit data');
     }
@@ -30,14 +29,14 @@ document.getElementById('clientForm').addEventListener('submit', async (e) => {
   }
 });
 
-// Function to fetch and display client data in real-time
+// Function to fetch and display submitted client data
 async function fetchClientData() {
   try {
     const response = await fetch(`${apiUrl}/fetch`);
     if (response.ok) {
       const data = await response.json();
       const clientDataDiv = document.getElementById('clientData');
-      clientDataDiv.innerHTML = '';  // Clear current data
+      clientDataDiv.innerHTML = '';  // Clear current display
 
       // Display each client entry
       data.forEach((client) => {
