@@ -2,7 +2,7 @@
 const apiUrl = 'http://13.60.229.82:8080/api';  // Update with EC2 public IP if needed
 
 // Form submission event handler
-document.getElementById('clientForm').addEventListener('submit', async (e) => {
+document.getElementById('clientForm')?.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const name = document.getElementById('name').value;
@@ -20,10 +20,10 @@ document.getElementById('clientForm').addEventListener('submit', async (e) => {
       document.getElementById('clientForm').reset();
       fetchClientData(); // Refresh data display after submission
     } else {
-      console.error('Failed to submit data');
+      console.error('Failed to submit data:', response.status, response.statusText);
     }
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error during submission:', error);
   }
 });
 
@@ -40,20 +40,20 @@ async function fetchClientData() {
         const clientDiv = document.createElement('div');
         clientDiv.classList.add('client-item');
         clientDiv.innerHTML = `
-          <p><strong>Name:</strong> ${client.name}</p>
-          <p><strong>Email:</strong> ${client.email}</p>
-          <p><strong>Service Required:</strong> ${client.service}</p>
+          <p><strong>Name:</strong> ${client.name || 'N/A'}</p>
+          <p><strong>Email:</strong> ${client.email || 'N/A'}</p>
+          <p><strong>Service Required:</strong> ${client.service || 'N/A'}</p>
           <p><strong>Submitted at:</strong> ${new Date(client.timestamp).toLocaleString()}</p>
         `;
         clientDataDiv.appendChild(clientDiv);
       });
     } else {
-      console.error('Failed to fetch client data');
+      console.error('Failed to fetch client data:', response.status, response.statusText);
     }
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error during data fetch:', error);
   }
 }
 
 // Initial data fetch on page load
-fetchClientData();
+document.addEventListener('DOMContentLoaded', fetchClientData);

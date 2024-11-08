@@ -7,6 +7,51 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="navbar-left">
+      <a href="index.html">HILL-TOP CONSULTANCY</a>
+    </div>
+    <div class="navbar-right">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li>
+          <a href="#">Services</a>
+          <ul class="dropdown">
+            <li><a href="consulting-services.html">Consulting Services</a></li>
+            <li><a href="application-services.html">Application Services & Solutions</a></li>
+            <li><a href="technologies-platforms.html">Technologies & Platforms</a></li>
+            <li><a href="managed-services.html">Managed Services</a></li>
+            <li><a href="professional-services.html">Professional Services</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#">Industries</a>
+          <ul class="dropdown">
+            <li><a href="#">Health</a></li>
+            <li><a href="#">Insurance</a></li>
+            <li><a href="#">Finance</a></li>
+            <li><a href="#">Municipal</a></li>
+            <li><a href="#">Transportation</a></li>
+            <li><a href="#">Public Services</a></li>
+            <li><a href="#">Government</a></li>
+            <li><a href="#">Telecommunications</a></li>
+            <li><a href="#">Manufacturing</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Technologies</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Insights</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="search-icon">
+        <input type="text" placeholder="Search...">
+      </div>
+    </div>
+  </nav>
+
   <!-- Company Information Header -->
   <header>
     <h1>HILL-TOP CONSULTANCY</h1>
@@ -22,7 +67,7 @@
     <p>With years of expertise, Hill-Top Consultancy offers tailored solutions in areas such as cloud migration, data analytics, and container orchestration with Kubernetes. Our team is dedicated to helping businesses adapt to digital advancements and drive growth through technology.</p>
   </section>
 
-  <!-- Form Section -->
+  <!-- Client Information Form -->
   <section class="form-section">
     <h2>Client Information Form</h2>
     <form id="clientForm">
@@ -49,8 +94,28 @@
 
   <!-- Footer Section -->
   <footer>
-    <p>For more details, visit our official site at <a href="https://htconsult.dk/" target="_blank">Hill-Top Consultancy</a></p>
-    <p>&copy; 2024 Hill-Top Consultancy. All rights reserved.</p>
+    <div class="footer-top">
+      <p>For more details, visit our official site at <a href="https://htconsult.dk/" target="_blank">Hill-Top Consultancy</a></p>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Hill-Top Consultancy. All rights reserved.</p>
+      <div class="newsletter">
+        <p>SIGN UP TO OUR NEWSLETTER</p>
+        <input type="email" placeholder="Email address">
+      </div>
+      <ul class="footer-links">
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Industries</a></li>
+        <li><a href="#">Technologies</a></li>
+        <li><a href="#">Insights</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Who we are</a></li>
+        <li><a href="#">Awards & Recognitions</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </div>
   </footer>
 
   <script src="app.js"></script>
