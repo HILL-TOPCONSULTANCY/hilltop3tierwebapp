@@ -1,8 +1,8 @@
-// API endpoint URL - replace with your actual backend API URL if necessary
-const apiUrl = 'http://13.60.229.82:8080/api';  // Update with EC2 public IP if needed
+// Set the API endpoint URL (replace with your backend endpoint if different)
+const apiUrl = 'http://13.60.229.82:8080/api';  // Using provided IP
 
 // Form submission event handler
-document.getElementById('clientForm')?.addEventListener('submit', async (e) => {
+document.getElementById('clientForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const name = document.getElementById('name').value;
@@ -10,6 +10,7 @@ document.getElementById('clientForm')?.addEventListener('submit', async (e) => {
   const service = document.getElementById('service').value;
 
   try {
+    // Send data to the backend
     const response = await fetch(`${apiUrl}/submit`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -17,13 +18,15 @@ document.getElementById('clientForm')?.addEventListener('submit', async (e) => {
     });
 
     if (response.ok) {
+      // Clear the form
       document.getElementById('clientForm').reset();
-      fetchClientData(); // Refresh data display after submission
+      // Refresh client data
+      fetchClientData();
     } else {
-      console.error('Failed to submit data:', response.status, response.statusText);
+      console.error('Failed to submit data');
     }
   } catch (error) {
-    console.error('Error during submission:', error);
+    console.error('Error:', error);
   }
 });
 
@@ -36,24 +39,25 @@ async function fetchClientData() {
       const clientDataDiv = document.getElementById('clientData');
       clientDataDiv.innerHTML = '';  // Clear current data
 
+      // Display each client entry
       data.forEach((client) => {
         const clientDiv = document.createElement('div');
         clientDiv.classList.add('client-item');
         clientDiv.innerHTML = `
-          <p><strong>Name:</strong> ${client.name || 'N/A'}</p>
-          <p><strong>Email:</strong> ${client.email || 'N/A'}</p>
-          <p><strong>Service Required:</strong> ${client.service || 'N/A'}</p>
+          <p><strong>Name:</strong> ${client.name}</p>
+          <p><strong>Email:</strong> ${client.email}</p>
+          <p><strong>Service Required:</strong> ${client.service}</p>
           <p><strong>Submitted at:</strong> ${new Date(client.timestamp).toLocaleString()}</p>
         `;
         clientDataDiv.appendChild(clientDiv);
       });
     } else {
-      console.error('Failed to fetch client data:', response.status, response.statusText);
+      console.error('Failed to fetch client data');
     }
   } catch (error) {
-    console.error('Error during data fetch:', error);
+    console.error('Error:', error);
   }
 }
 
 // Initial data fetch on page load
-document.addEventListener('DOMContentLoaded', fetchClientData);
+fetchClientData();
