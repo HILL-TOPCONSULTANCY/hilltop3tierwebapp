@@ -17,12 +17,12 @@ frontend/
 
 2. **Build the Docker image**:
    ```bash
-   docker build -t your-dockerhub-username/frontend-app:v1 .
+   docker build -t hilltopconsultancy/threetierwebapp:frontend .
    ```
 
 3. **Push the image to Docker Hub or another container registry**:
    ```bash
-   docker push your-dockerhub-username/frontend-app:v1
+   docker push hilltopconsultancy/threetierwebapp:frontend
    ```
 
 ### 4. Helm Chart Structure for 3-Tier Deployment
@@ -71,7 +71,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: your-dockerhub-username/frontend-app:v1
+          image: hilltopconsultancy/threetierwebapp:frontend
           ports:
             - containerPort: 80
           env:
@@ -119,7 +119,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: your-dockerhub-username/backend-app:v1
+          image: hilltopconsultancy/threetierwebapp:backend
           ports:
             - containerPort: 8080
           env:
